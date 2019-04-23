@@ -13,6 +13,9 @@
     },
     "slow-information-renderer-e2e": {
       "tags": []
+    },
+    "slow-ass-api": {
+      "tags": []
     }
   }
 }

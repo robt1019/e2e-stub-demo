@@ -116,6 +116,32 @@
           }
         }
       }
+    },
+    "slow-ass-api": {
+      "root": "libs/slow-ass-api",
+      "sourceRoot": "libs/slow-ass-api/src",
+      "projectType": "library",
+      "prefix": "wtfisanapi",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/slow-ass-api/tsconfig.lib.json",
+              "libs/slow-ass-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/slow-ass-api/jest.config.js",
+            "tsConfig": "libs/slow-ass-api/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
