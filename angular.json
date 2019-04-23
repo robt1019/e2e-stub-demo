@@ -2,7 +2,122 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "slow-information-renderer": {
+      "root": "apps/slow-information-renderer/",
+      "sourceRoot": "apps/slow-information-renderer/src",
+      "projectType": "application",
+      "prefix": "wtfisanapi",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/slow-information-renderer",
+            "index": "apps/slow-information-renderer/src/index.html",
+            "main": "apps/slow-information-renderer/src/main.ts",
+            "polyfills": "apps/slow-information-renderer/src/polyfills.ts",
+            "tsConfig": "apps/slow-information-renderer/tsconfig.app.json",
+            "assets": [
+              "apps/slow-information-renderer/src/favicon.ico",
+              "apps/slow-information-renderer/src/assets"
+            ],
+            "styles": ["apps/slow-information-renderer/src/styles.css"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/slow-information-renderer/src/environments/environment.ts",
+                  "with": "apps/slow-information-renderer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "slow-information-renderer:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "slow-information-renderer:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "slow-information-renderer:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/slow-information-renderer/tsconfig.app.json",
+              "apps/slow-information-renderer/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/slow-information-renderer/jest.config.js",
+            "tsConfig": "apps/slow-information-renderer/tsconfig.spec.json",
+            "setupFile": "apps/slow-information-renderer/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "slow-information-renderer-e2e": {
+      "root": "apps/slow-information-renderer-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/slow-information-renderer-e2e/cypress.json",
+            "tsConfig": "apps/slow-information-renderer-e2e/tsconfig.e2e.json",
+            "devServerTarget": "slow-information-renderer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "slow-information-renderer:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/slow-information-renderer-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +125,6 @@
     },
     "defaultCollection": "@nrwl/schematics"
   },
-  "schematics": {}
+  "schematics": {},
+  "defaultProject": "slow-information-renderer"
 }

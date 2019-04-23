@@ -7,5 +7,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "slow-information-renderer": {
+      "tags": []
+    },
+    "slow-information-renderer-e2e": {
+      "tags": []
+    }
+  }
 }
