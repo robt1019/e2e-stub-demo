@@ -1,8 +1,11 @@
 <h1>You want facts!?!</h1>
 <h2>Because we got em</h2>
 <h3>Seriously</h3>
-<button (click)="getSlowInformation()">Click le button</button>
+<button (click)="getSlowInformation()" id="interestingFactButton">
+  Click le button
+</button>
 <p
+  id="interestingFact"
   *ngIf="(slowInformation | async)"
   [ngClass]="{
     wow: (slowInformation | async)?.fact.interestLevel === 'interesting',

@@ -61,6 +61,10 @@
           "configurations": {
             "production": {
               "browserTarget": "slow-information-renderer:build:production"
+            },
+            "e2e": {
+              "browserTarget": "slow-information-renderer:build:production",
+              "port": 4201
             }
           }
         },
@@ -100,7 +104,7 @@
           "options": {
             "cypressConfig": "apps/slow-information-renderer-e2e/cypress.json",
             "tsConfig": "apps/slow-information-renderer-e2e/tsconfig.e2e.json",
-            "devServerTarget": "slow-information-renderer:serve"
+            "devServerTarget": "slow-information-renderer:serve:e2e"
           },
           "configurations": {
             "production": {

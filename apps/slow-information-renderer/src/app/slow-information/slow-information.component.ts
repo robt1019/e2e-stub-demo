@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SlowInformationService } from '../slow-information.service';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
 import { SlowInformation } from '@wtfisanapi/slow-ass-api';
+import { BehaviorSubject } from 'rxjs';
+import { SlowInformationService } from '../slow-information.service';
 
 @Component({
   selector: 'wtfisanapi-slow-information',

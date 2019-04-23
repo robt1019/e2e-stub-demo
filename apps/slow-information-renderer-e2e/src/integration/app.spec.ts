@@ -1,9 +1,8 @@
-import { getGreeting } from '../support/app.po';
-
-describe('Hello Nx', () => {
+describe('slow-information-renderer', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    getGreeting().contains('Welcome to slow-information-renderer!');
+  it('should display an interesting fact when the button is clicked', () => {
+    cy.get('#interestingFactButton').click();
+    cy.get('#interestingFact');
   });
 });
