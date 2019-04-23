@@ -14,11 +14,13 @@ export class SlowInformationComponent {
   > = new BehaviorSubject<SlowInformation>(undefined);
 
   public loading = false;
+  public showMoreInfo = false;
 
   constructor(private slowInformationService: SlowInformationService) {}
 
   async getSlowInformation() {
     this.loading = true;
+    this.showMoreInfo = false;
     const slowInfo = await this.slowInformationService.getSlowInfo();
     this.slowInformation.next(slowInfo);
     this.loading = false;

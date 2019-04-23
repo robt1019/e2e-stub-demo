@@ -20,3 +20,13 @@
   {{ (slowInformation | async)?.fact.body }}
 </p>
 <marquee *ngIf="loading">loading you some sweet facts user</marquee>
+<button
+  *ngIf="
+    (slowInformation | async)?.fact.interestLevel ===
+    'holyCrudThatIsInteresting'
+  "
+  (click)="showMoreInfo = 'true'"
+>
+  Show more information around this especially interesting fact?
+</button>
+<p *ngIf="showMoreInfo">More Information</p>
