@@ -26,7 +26,8 @@
     'holyCrudThatIsInteresting'
   "
   (click)="showMoreInfo = 'true'"
+  id="showMoreInfoButton"
 >
   Show more information around this especially interesting fact?
 </button>
-<p *ngIf="showMoreInfo">More Information</p>
+<p *ngIf="showMoreInfo" id="furtherInformation">More Information</p>

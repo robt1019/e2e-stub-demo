@@ -19,6 +19,7 @@ export class SlowInformationComponent {
   constructor(private slowInformationService: SlowInformationService) {}
 
   async getSlowInformation() {
+    this.slowInformation.next(undefined);
     this.loading = true;
     this.showMoreInfo = false;
     const slowInfo = await this.slowInformationService.getSlowInfo();
