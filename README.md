@@ -2,7 +2,11 @@
 
 A demo repo showing an approach to stubbing slow dependencies for e2e tests
 
-It was made as a play along for this blog post which explains the commits in greater detail:
+It was made as a play along for this blog post which explains why I think this can be a good idea:
+
+http://wtfisanapi.com/why-tf-should-i-stub-dependencies-for-an-e2e-test/
+
+And this one, which explains the commits in greater detail:
 
 http://wtfisanapi.com/htf-do-i-write-e2e-tests-with-a-stubbed-dependency-angular-nrwl-nx-edition/
 
