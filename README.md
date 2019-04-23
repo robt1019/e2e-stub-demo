@@ -1,41 +1,29 @@
-# E2eStubDemo
+# What is this???
 
-This project was generated using [Nx](https://nx.dev).
+A demo repo showing an approach to stubbing slow dependencies for e2e tests
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+It was made as a play along for this blog post which explains the commits in greater detail:
 
-🔎 **Nx is a set of Angular CLI power-ups for modern development.**
+http://wtfisanapi.com/htf-do-i-write-e2e-tests-with-a-stubbed-dependency-angular-nrwl-nx-edition/
 
-## Quick Start & Documentation
+It uses Cypress, and was built using Nrwl Nx
 
-[30-minute video showing all Nx features](https://nx.dev/getting-started/what-is-nx)
+It is an Angular application which calls a so called `slow ass api` (also inside the repo), which returns some data to the Angular App to render after an indeterminate amount of time.
 
-[Interactive tutorial](https://nx.dev/tutorial/01-create-application)
+I made it to show how stubbing slow dependencies can be a relatively painless, robust and speedy approach to e2e testing, when paired with strong typings.
 
-## Generate your first application
+## Install
 
-Run `ng g app myapp` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace.
+`npm i` or `yarn`
 
-## Development server
+## Run app locally
 
-Run `ng serve myapp` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm run start` or `yarn start`
 
-## Code scaffolding
+App will hopefully pop up on `localhost:4200`
 
-Run `ng generate component component-name --project=myapp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It is a beautiful app, making full use of the html `marquee` element amongst other gems.
 
-## Build
+## Run e2e tests
 
-Run `ng build myapp` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Jest](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Cypress](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`npm run e2e` or `yarn e2e`
