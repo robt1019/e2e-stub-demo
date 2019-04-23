@@ -50,6 +50,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "e2e": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/slow-information-renderer/src/environments/environment.ts",
+                  "with": "apps/slow-information-renderer/src/environments/environment.e2e.ts"
+                }
+              ]
             }
           }
         },
@@ -63,7 +71,7 @@
               "browserTarget": "slow-information-renderer:build:production"
             },
             "e2e": {
-              "browserTarget": "slow-information-renderer:build:production",
+              "browserTarget": "slow-information-renderer:build:e2e",
               "port": 4201
             }
           }
@@ -108,7 +116,7 @@
           },
           "configurations": {
             "production": {
-              "devServerTarget": "slow-information-renderer:serve:production"
+              "devServerTarget": "slow-information-renderer:serve:e2e"
             }
           }
         },
