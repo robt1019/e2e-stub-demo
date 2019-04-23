@@ -6,6 +6,6 @@ import { slowAssApi, SlowInformation } from '@wtfisanapi/slow-ass-api';
 })
 export class SlowInformationService {
   public async getSlowInfo(): Promise<SlowInformation> {
-    return await slowAssApi.getInformation();
+    return await slowAssApi.getInformation(2000);
   }
 }
